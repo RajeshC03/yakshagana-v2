@@ -1,0 +1,271 @@
+// Translation dictionary — covers static UI text (nav, buttons, labels, headings).
+// Dynamic content from the database (mela names/descriptions, show details,
+// prasanga text) stays as entered, since translating that accurately would
+// require Kannada versions stored in the database itself.
+
+const dict = {
+  // ── Navbar ─────────────────────────────────────────────────
+  nav_home:          { en: 'Home',              kn: 'ಮುಖಪುಟ' },
+  nav_shows:         { en: "Tonight's Shows",   kn: 'ಇಂದಿನ ಪ್ರದರ್ಶನಗಳು' },
+  nav_melas:         { en: 'Famous Melas',      kn: 'ಪ್ರಸಿದ್ಧ ಮೇಳಗಳು' },
+  nav_prasangas:     { en: 'Prasangas',         kn: 'ಪ್ರಸಂಗಗಳು' },
+  nav_styles:        { en: 'Styles',            kn: 'ಶೈಲಿಗಳು' },
+  nav_user_login:    { en: 'User Login',        kn: 'ಬಳಕೆದಾರ ಲಾಗಿನ್' },
+  nav_org_login:     { en: 'Organiser Login',   kn: 'ಸಂಘಟಕ ಲಾಗಿನ್' },
+  nav_logout:        { en: 'Logout',            kn: 'ಲಾಗ್ ಔಟ್' },
+  nav_add_show:      { en: '+ Add Show',        kn: '+ ಪ್ರದರ್ಶನ ಸೇರಿಸಿ' },
+
+  // ── Common buttons / actions ───────────────────────────────
+  btn_login:           { en: 'Login',                 kn: 'ಲಾಗಿನ್' },
+  btn_register:        { en: 'Register',               kn: 'ನೋಂದಾಯಿಸಿ' },
+  btn_register_free:   { en: 'Register Free',          kn: 'ಉಚಿತವಾಗಿ ನೋಂದಾಯಿಸಿ' },
+  btn_explore_more:    { en: 'Explore More about Yakshagana', kn: 'ಯಕ್ಷಗಾನದ ಬಗ್ಗೆ ಇನ್ನೂ ತಿಳಿಯಿರಿ' },
+  btn_login_explore:   { en: 'Login to Explore',       kn: 'ಅನ್ವೇಷಿಸಲು ಲಾಗಿನ್ ಮಾಡಿ' },
+  btn_view_all_melas:  { en: 'View All Melas',          kn: 'ಎಲ್ಲಾ ಮೇಳಗಳನ್ನು ನೋಡಿ' },
+  btn_back:            { en: '← Back',                 kn: '← ಹಿಂದೆ' },
+  btn_back_dashboard:  { en: '← Back to dashboard',     kn: '← ಡ್ಯಾಶ್‌ಬೋರ್ಡ್‌ಗೆ ಹಿಂದಿರುಗಿ' },
+  btn_back_melas:      { en: '← Back to melas',         kn: '← ಮೇಳಗಳಿಗೆ ಹಿಂದಿರುಗಿ' },
+  btn_edit:            { en: '✏️ Edit',                 kn: '✏️ ಸಂಪಾದಿಸಿ' },
+  btn_delete:          { en: '🗑️ Delete',               kn: '🗑️ ಅಳಿಸಿ' },
+  btn_refresh:         { en: '🔄 Refresh',               kn: '🔄 ರಿಫ್ರೆಶ್' },
+  btn_add_show_details:{ en: '🎭 Add Show Details',      kn: '🎭 ಪ್ರದರ್ಶನ ವಿವರ ಸೇರಿಸಿ' },
+  btn_create_account:  { en: 'Create Free Account',     kn: 'ಉಚಿತ ಖಾತೆ ರಚಿಸಿ' },
+  btn_im_organiser:    { en: "I'm an Organiser",        kn: 'ನಾನು ಸಂಘಟಕ' },
+  btn_get_started:     { en: 'Get Started Free',        kn: 'ಉಚಿತವಾಗಿ ಪ್ರಾರಂಭಿಸಿ' },
+  btn_explore_melas:   { en: 'Explore Melas',           kn: 'ಮೇಳಗಳನ್ನು ಅನ್ವೇಷಿಸಿ' },
+  btn_all_melas:       { en: 'All Melas',                kn: 'ಎಲ್ಲಾ ಮೇಳಗಳು' },
+  btn_view_all:        { en: 'View all →',               kn: 'ಎಲ್ಲವನ್ನೂ ನೋಡಿ →' },
+  btn_login_see_all:   { en: 'Login to see all →',       kn: 'ಎಲ್ಲವನ್ನೂ ನೋಡಲು ಲಾಗಿನ್ ಮಾಡಿ →' },
+  btn_login_now:       { en: 'Login Now',                kn: 'ಈಗ ಲಾಗಿನ್ ಮಾಡಿ' },
+  btn_login_view_shows:{ en: 'Login to View Shows',      kn: 'ಪ್ರದರ್ಶನ ನೋಡಲು ಲಾಗಿನ್ ಮಾಡಿ' },
+
+  // ── Forms ──────────────────────────────────────────────────
+  field_full_name:     { en: 'Full Name',             kn: 'ಪೂರ್ಣ ಹೆಸರು' },
+  field_email:         { en: 'Email',                 kn: 'ಇಮೇಲ್' },
+  field_phone:         { en: 'Phone',                 kn: 'ಫೋನ್' },
+  field_district:      { en: 'Your District',         kn: 'ನಿಮ್ಮ ಜಿಲ್ಲೆ' },
+  field_password:      { en: 'Password',              kn: 'ಪಾಸ್‌ವರ್ಡ್' },
+  field_confirm_pw:    { en: 'Confirm Password',      kn: 'ಪಾಸ್‌ವರ್ಡ್ ದೃಢೀಕರಿಸಿ' },
+  field_mela_name:     { en: 'Mela Name',             kn: 'ಮೇಳದ ಹೆಸರು' },
+  field_region:        { en: 'Region',                kn: 'ಪ್ರಾಂತ್ಯ' },
+  field_your_name:     { en: 'Your Name',             kn: 'ನಿಮ್ಮ ಹೆಸರು' },
+  btn_submit_login:    { en: 'Login',                 kn: 'ಲಾಗಿನ್' },
+  btn_submit_register: { en: 'Register',              kn: 'ನೋಂದಾಯಿಸಿ' },
+  btn_please_wait:     { en: 'Please wait...',        kn: 'ದಯವಿಟ್ಟು ಕಾಯಿರಿ...' },
+
+  // ── Generic states ─────────────────────────────────────────
+  loading:             { en: 'Loading...',                       kn: 'ಲೋಡ್ ಆಗುತ್ತಿದೆ...' },
+  search_placeholder:  { en: 'Search prasanga, mela, venue...',  kn: 'ಪ್ರಸಂಗ, ಮೇಳ, ಸ್ಥಳ ಹುಡುಕಿ...' },
+  all_shows:           { en: 'All Shows',          kn: 'ಎಲ್ಲಾ ಪ್ರದರ್ಶನಗಳು' },
+  tonight_chip:        { en: '🔴 Tonight',         kn: '🔴 ಇಂದು ರಾತ್ರಿ' },
+  upcoming:            { en: 'Upcoming',           kn: 'ಮುಂಬರುವ' },
+  free:                { en: 'Free',               kn: 'ಉಚಿತ' },
+
+  // ── Page headings (English shown together with Kannada regardless of toggle) ──
+  h_home_title:        { en: "Coastal Karnataka's", kn: 'ಕರಾವಳಿ ಕರ್ನಾಟಕದ' },
+  h_home_subtitle:     { en: 'Living Theatre',      kn: 'ಜೀವಂತ ರಂಗಭೂಮಿ' },
+  h_tonight_perf:       { en: "Tonight's Performances", kn: 'ಇಂದಿನ ರಾತ್ರಿಯ ಪ್ರದರ್ಶನಗಳು' },
+  h_shows_title:        { en: 'Upcoming Shows',         kn: 'ಮುಂಬರುವ ಪ್ರದರ್ಶನಗಳು' },
+  h_melas_title:        { en: 'Famous Melas',           kn: 'ಪ್ರಸಿದ್ಧ ಮೇಳಗಳು' },
+  h_all_melas_title:    { en: 'Melas',                  kn: 'ಮೇಳಗಳು' },
+  h_prasangas_title:    { en: 'Prasangas',              kn: 'ಪ್ರಸಂಗಗಳು' },
+  h_famous_prasangas:   { en: 'Famous Prasangas',       kn: 'ಪ್ರಸಿದ್ಧ ಪ್ರಸಂಗಗಳು' },
+  h_styles_title:       { en: 'Yakshagana Styles',      kn: 'ಯಕ್ಷಗಾನ ಶೈಲಿಗಳು' },
+  h_show_schedules:     { en: 'Show Schedules',         kn: 'ಪ್ರದರ್ಶನ ವೇಳಾಪಟ್ಟಿ' },
+  h_costume_guide:      { en: 'Costume & Ornament Guide', kn: 'ವೇಷಭೂಷಣ ಮಾರ್ಗದರ್ಶಿ' },
+  h_instruments:        { en: 'Instruments of the Himmela', kn: 'ಹಿಮ್ಮೇಳ ವಾದ್ಯಗಳು' },
+  h_user_register:      { en: 'User Register',          kn: 'ಬಳಕೆದಾರ ನೋಂದಣಿ' },
+  h_user_login:         { en: 'User Login',             kn: 'ಬಳಕೆದಾರ ಲಾಗಿನ್' },
+  h_org_register:       { en: 'Organiser Register',     kn: 'ಸಂಘಟಕ ನೋಂದಣಿ' },
+  h_org_login:          { en: 'Organiser Login',        kn: 'ಸಂಘಟಕ ಲಾಗಿನ್' },
+  h_add_show:           { en: 'Add New Show',           kn: 'ಹೊಸ ಪ್ರದರ್ಶನ ಸೇರಿಸಿ' },
+  h_edit_show:           { en: 'Edit Show',              kn: 'ಪ್ರದರ್ಶನ ಸಂಪಾದಿಸಿ' },
+  h_dashboard_welcome:   { en: 'Welcome',                kn: 'ಸ್ವಾಗತ' },
+  h_login_explore_more:  { en: 'Login to Explore More',  kn: 'ಇನ್ನೂ ತಿಳಿಯಲು ಲಾಗಿನ್ ಮಾಡಿ' },
+  h_explore_more:        { en: 'Explore More about Yakshagana', kn: 'ಯಕ್ಷಗಾನದ ಬಗ್ಗೆ ಇನ್ನೂ ತಿಳಿಯಿರಿ' },
+  h_login_view_mela:     { en: 'Login to View This Mela', kn: 'ಈ ಮೇಳವನ್ನು ನೋಡಲು ಲಾಗಿನ್ ಮಾಡಿ' },
+  h_tonight_upcoming:    { en: "Tonight's & Upcoming Shows", kn: 'ಇಂದಿನ ಮತ್ತು ಮುಂಬರುವ ಪ್ರದರ್ಶನಗಳು' },
+
+  // ── Home page extras ───────────────────────────────────────
+  hero_desc:           { en: 'All-night dance dramas blending mythology, devotion, and spectacle. Performed across coastal Karnataka from November to May.',
+                          kn: 'ಪುರಾಣ, ಭಕ್ತಿ ಮತ್ತು ವಿಜೃಂಭಣೆಯನ್ನು ಬೆರೆಸುವ ರಾತ್ರಿಯಿಡೀ ನೃತ್ಯ ನಾಟಕಗಳು. ನವೆಂಬರ್‌ನಿಂದ ಮೇ ತಿಂಗಳವರೆಗೆ ಕರಾವಳಿ ಕರ್ನಾಟಕದಾದ್ಯಂತ ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತದೆ.' },
+  stat_active_melas:   { en: 'Active Melas',     kn: 'ಸಕ್ರಿಯ ಮೇಳಗಳು' },
+  stat_shows_per_year: { en: 'Shows Per Year',   kn: 'ವರ್ಷಕ್ಕೆ ಪ್ರದರ್ಶನಗಳು' },
+  stat_season:         { en: 'Annual Season',    kn: 'ವಾರ್ಷಿಕ ಋತು' },
+  stat_artists:        { en: 'Artists',          kn: 'ಕಲಾವಿದರು' },
+  welcome_back:        { en: 'Welcome back',     kn: 'ಮರಳಿ ಸ್ವಾಗತ' },
+  no_shows_tonight:    { en: 'No shows scheduled for tonight', kn: 'ಇಂದು ರಾತ್ರಿ ಯಾವುದೇ ಪ್ರದರ್ಶನ ನಿಗದಿಯಾಗಿಲ್ಲ' },
+  tonight_schedule_desc: { en: "Register or login to see tonight's live performances and real-time updates.",
+                            kn: 'ಇಂದಿನ ರಾತ್ರಿ ನೇರ ಪ್ರದರ್ಶನಗಳು ಮತ್ತು ತಕ್ಷಣದ ಅಪ್‌ಡೇಟ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸಲು ನೋಂದಾಯಿಸಿ ಅಥವಾ ಲಾಗಿನ್ ಮಾಡಿ.' },
+  login_see_all_melas: { en: 'Login to see all',  kn: 'ಎಲ್ಲವನ್ನೂ ನೋಡಲು ಲಾಗಿನ್ ಮಾಡಿ' },
+  melas_and_shows:     { en: 'melas and tonight\'s show schedules', kn: 'ಮೇಳಗಳು ಮತ್ತು ಇಂದಿನ ಪ್ರದರ್ಶನ ವೇಳಾಪಟ್ಟಿ' },
+  explore_more_desc:   { en: "Discover Tenkutittu and Badagutittu styles, costumes, instruments, and performance videos — then login to unlock tonight's live show schedule.",
+                          kn: 'ತೆಂಕುತಿಟ್ಟು ಮತ್ತು ಬಡಗುತಿಟ್ಟು ಶೈಲಿಗಳು, ವೇಷಭೂಷಣಗಳು, ವಾದ್ಯಗಳು ಮತ್ತು ಪ್ರದರ್ಶನದ ವೀಡಿಯೋಗಳನ್ನು ಅನ್ವೇಷಿಸಿ — ನಂತರ ಇಂದಿನ ರಾತ್ರಿಯ ನೇರ ಪ್ರದರ್ಶನ ವೇಳಾಪಟ್ಟಿಯನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಲು ಲಾಗಿನ್ ಮಾಡಿ.' },
+  join_thousands:      { en: 'Join thousands of Yakshagana fans across Karnataka', kn: 'ಕರ್ನಾಟಕದಾದ್ಯಂತ ಸಾವಿರಾರು ಯಕ್ಷಗಾನ ಅಭಿಮಾನಿಗಳೊಂದಿಗೆ ಸೇರಿ' },
+  season_months: {en:'Nov–May', kn:'ನವೆಂಬರ್‌ನಿಂದ ಮೇ ವರೆಗೆ'},
+
+  // ── Shows page ─────────────────────────────────────────────
+  shows_login_desc:    { en: "Login or create a free account to view tonight's shows, upcoming performances, and real-time updates from all melas.",
+                          kn: 'ಇಂದಿನ ಪ್ರದರ್ಶನಗಳು, ಮುಂಬರುವ ಪ್ರದರ್ಶನಗಳು ಮತ್ತು ಎಲ್ಲಾ ಮೇಳಗಳ ತಾಜಾ ಮಾಹಿತಿಯನ್ನು ನೋಡಲು ಲಾಗಿನ್ ಮಾಡಿ ಅಥವಾ ಉಚಿತ ಖಾತೆ ರಚಿಸಿ.' },
+  are_you_organiser:   { en: 'Are you a mela organiser?', kn: 'ನೀವು ಮೇಳ ಸಂಘಟಕರೇ?' },
+  login_here:          { en: 'Login here', kn: 'ಇಲ್ಲಿ ಲಾಗಿನ್ ಮಾಡಿ' },
+  live_schedule_today: { en: 'Latest Updates · Today', kn: 'ಇತ್ತೀಚಿನ ಮಾಹಿತಿ · ಇಂದು' },
+  no_shows_found:      { en: 'No shows found matching your filters.', kn: 'ನಿಮ್ಮ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಹೊಂದುವ ಯಾವುದೇ ಪ್ರದರ್ಶನ ಕಂಡುಬಂದಿಲ್ಲ.' },
+  fetching_shows:      { en: 'Fetching shows from database...', kn: 'ಡೇಟಾಬೇಸ್‌ನಿಂದ ಪ್ರದರ್ಶನಗಳನ್ನು ತರಲಾಗುತ್ತಿದೆ...' },
+  showing_n_shows:     { en: 'Showing', kn: 'ತೋರಿಸಲಾಗುತ್ತಿದೆ' },
+  shows_word:          { en: 'show', kn: 'ಪ್ರದರ್ಶನ' },
+  live_from_mysql:     { en: 'Latest Updates', kn: 'ಇತ್ತೀಚಿನ ಮಾಹಿತಿ' },
+
+  // ── Melas page ─────────────────────────────────────────────
+  melas_all_desc:      { en: 'All touring troupes carrying the Yakshagana tradition across Karnataka',
+                          kn: 'ಕರ್ನಾಟಕದಾದ್ಯಂತ ಯಕ್ಷಗಾನ ಪರಂಪರೆಯನ್ನು ಸಾಗಿಸುವ ಎಲ್ಲಾ ಸಂಚಾರಿ ಮೇಳಗಳು' },
+  melas_famous_desc:   { en: 'The most celebrated Yakshagana troupes of coastal Karnataka',
+                          kn: 'ಕರಾವಳಿ ಕರ್ನಾಟಕದ ಅತ್ಯಂತ ಪ್ರಸಿದ್ಧ ಯಕ್ಷಗಾನ ಮೇಳಗಳು' },
+  melas_login_banner:  { en: 'Login to see all', kn: 'ಎಲ್ಲವನ್ನೂ ನೋಡಲು ಲಾಗಿನ್ ಮಾಡಿ' },
+  melas_region_text:   { en: 'melas across Udupi, Dakshina Kannada, Uttara Kannada & Shivamogga',
+                          kn: 'ಮೇಳಗಳು — ಉಡುಪಿ, ದಕ್ಷಿಣ ಕನ್ನಡ, ಉತ್ತರ ಕನ್ನಡ ಮತ್ತು ಶಿವಮೊಗ್ಗದಾದ್ಯಂತ' },
+  loading_melas:       { en: 'Loading melas...', kn: 'ಮೇಳಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...' },
+  mela_word:           { en: 'mela', kn: 'ಮೇಳ' },
+
+  // ── Prasanga page ──────────────────────────────────────────
+  prasangas_all_desc:    { en: 'Sub-stories from Hindu epics performed in Yakshagana.',
+                            kn: 'ಯಕ್ಷಗಾನದಲ್ಲಿ ಪ್ರದರ್ಶಿಸಲಾಗುವ ಹಿಂದೂ ಪುರಾಣಗಳ ಉಪಕಥೆಗಳು.' },
+  prasangas_famous_desc: { en: 'A few celebrated sub-stories from Hindu epics performed in Yakshagana.',
+                            kn: 'ಯಕ್ಷಗಾನದಲ್ಲಿ ಪ್ರದರ್ಶಿಸಲಾಗುವ ಕೆಲವು ಪ್ರಸಿದ್ಧ ಉಪಕಥೆಗಳು.' },
+  from_epic:             { en: 'from', kn: 'ಮೂಲ' },
+  login_unlock_prasangas:{ en: "Login or create a free account to unlock all prasangas, full mela listings, and tonight's live show schedule.",
+                            kn: 'ಎಲ್ಲಾ ಪ್ರಸಂಗಗಳು, ಸಂಪೂರ್ಣ ಮೇಳ ಪಟ್ಟಿ ಮತ್ತು ಇಂದಿನ ರಾತ್ರಿಯ ನೇರ ಪ್ರದರ್ಶನ ವೇಳಾಪಟ್ಟಿಯನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಲು ಲಾಗಿನ್ ಮಾಡಿ ಅಥವಾ ಉಚಿತ ಖಾತೆ ರಚಿಸಿ.' },
+
+  // ── Styles page ────────────────────────────────────────────
+  styles_intro:         { en: "Tenkutittu and Badagutittu — two living traditions of coastal Karnataka's dance-drama, each with their own costumes, ornaments, and rhythm.",
+                           kn: 'ತೆಂಕುತಿಟ್ಟು ಮತ್ತು ಬಡಗುತಿಟ್ಟು — ಕರಾವಳಿ ಕರ್ನಾಟಕದ ನೃತ್ಯ-ನಾಟಕದ ಎರಡು ಜೀವಂತ ಪರಂಪರೆಗಳು, ತಮ್ಮದೇ ವೇಷಭೂಷಣ, ಆಭರಣ ಮತ್ತು ಲಯವನ್ನು ಹೊಂದಿವೆ.' },
+  styles_login_unlock:  { en: 'Login or create a free account to unlock both styles in full — costumes, instruments, performance videos, and more.',
+                           kn: 'ಎರಡೂ ಶೈಲಿಗಳನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಅನ್ಲಾಕ್ ಮಾಡಲು ಲಾಗಿನ್ ಮಾಡಿ ಅಥವಾ ಉಚಿತ ಖಾತೆ ರಚಿಸಿ — ವೇಷಭೂಷಣ, ವಾದ್ಯಗಳು, ಪ್ರದರ್ಶನ ವೀಡಿಯೋಗಳು ಮತ್ತು ಇನ್ನೂ ಹೆಚ್ಚು.' },
+  styles_click_hint:    { en: 'The two living traditions of coastal Karnataka\'s dance-drama — distinguished by music, costume, and region. Click any item below to view it up close.',
+                           kn: 'ಕರಾವಳಿ ಕರ್ನಾಟಕದ ನೃತ್ಯ-ನಾಟಕದ ಎರಡು ಜೀವಂತ ಪರಂಪರೆಗಳು — ಸಂಗೀತ, ವೇಷಭೂಷಣ ಮತ್ತು ಪ್ರಾಂತ್ಯದಿಂದ ಗುರುತಿಸಲ್ಪಡುತ್ತವೆ. ಹತ್ತಿರದಿಂದ ನೋಡಲು ಕೆಳಗಿನ ಯಾವುದೇ ಅಂಶವನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ.' },
+  about_this_style:     { en: '📜 ABOUT THIS STYLE', kn: '📜 ಈ ಶೈಲಿಯ ಬಗ್ಗೆ' },
+  view_label:            { en: '🔍 View', kn: '🔍 ನೋಡಿ' },
+
+  // ── Mela detail page ───────────────────────────────────────
+  mela_not_found:        { en: 'Mela not found.', kn: 'ಮೇಳ ಕಂಡುಬಂದಿಲ್ಲ.' },
+  mela_login_desc:       { en: 'This mela is part of our full directory, available after login or registration.',
+                            kn: 'ಈ ಮೇಳವು ನಮ್ಮ ಸಂಪೂರ್ಣ ಪಟ್ಟಿಯ ಭಾಗವಾಗಿದ್ದು, ಲಾಗಿನ್ ಅಥವಾ ನೋಂದಣಿಯ ನಂತರ ಲಭ್ಯವಿದೆ.' },
+  stat_troupes:          { en: 'Troupes',        kn: 'ತಂಡಗಳು' },
+  stat_shows_season:     { en: 'Shows/Season',   kn: 'ಪ್ರದರ್ಶನ/ಋತು' },
+  stat_style:            { en: 'Style',          kn: 'ಶೈಲಿ' },
+  stat_founded:          { en: 'Founded',        kn: 'ಸ್ಥಾಪಿತ' },
+
+  h_about:                { en: '📜 About',       kn: '📜 ಪರಿಚಯ' },
+  h_location:             { en: '📍 Location',    kn: '📍 ಸ್ಥಳ' },
+  h_deity:                { en: '🙏 Deity',       kn: '🙏 ಆರಾಧ್ಯ ದೇವರು' },
+  h_famous_artists:       { en: '🎭 Famous Artists', kn: '🎭 ಪ್ರಸಿದ್ಧ ಕಲಾವಿದರು' },
+  h_popular_prasangas:    { en: '📖 Popular Prasangas', kn: '📖 ಜನಪ್ರಿಯ ಪ್ರಸಂಗಗಳು' },
+  no_shows_for_mela:      { en: 'No shows currently scheduled for', kn: 'ಯಾವುದೇ ಪ್ರದರ್ಶನ ಪ್ರಸ್ತುತ ನಿಗದಿಯಾಗಿಲ್ಲ' },
+  check_back_soon:        { en: 'Check back soon!', kn: 'ಮತ್ತೆ ನೋಡಿ!' },
+
+  // ── Auth pages ─────────────────────────────────────────────
+  user_register_subtitle: { en: 'Create your account to follow shows', kn: 'ಪ್ರದರ್ಶನಗಳನ್ನು ಅನುಸರಿಸಲು ನಿಮ್ಮ ಖಾತೆ ರಚಿಸಿ' },
+  user_login_subtitle:    { en: 'Login to access your Yakshagana portal', kn: 'ನಿಮ್ಮ ಯಕ್ಷಗಾನ ಪೋರ್ಟಲ್ ಪ್ರವೇಶಿಸಲು ಲಾಗಿನ್ ಮಾಡಿ' },
+  org_register_subtitle:  { en: 'Register your mela to post show schedules', kn: 'ಪ್ರದರ್ಶನ ವೇಳಾಪಟ್ಟಿ ಪೋಸ್ಟ್ ಮಾಡಲು ನಿಮ್ಮ ಮೇಳವನ್ನು ನೋಂದಾಯಿಸಿ' },
+  org_login_subtitle:     { en: 'Login to manage your show schedules', kn: 'ನಿಮ್ಮ ಪ್ರದರ್ಶನ ವೇಳಾಪಟ್ಟಿ ನಿರ್ವಹಿಸಲು ಲಾಗಿನ್ ಮಾಡಿ' },
+  already_registered:     { en: 'Already registered?', kn: 'ಈಗಾಗಲೇ ನೋಂದಾಯಿಸಿದ್ದೀರಾ?' },
+  not_registered_yet:     { en: 'Not registered yet?', kn: 'ಇನ್ನೂ ನೋಂದಾಯಿಸಿಲ್ಲವೇ?' },
+  login_here_btn:         { en: 'Login Here',    kn: 'ಇಲ್ಲಿ ಲಾಗಿನ್ ಮಾಡಿ' },
+  register_here_btn:      { en: 'Register Here', kn: 'ಇಲ್ಲಿ ನೋಂದಾಯಿಸಿ' },
+  field_full_name_req:    { en: 'Full Name *',   kn: 'ಪೂರ್ಣ ಹೆಸರು *' },
+  field_email_req:        { en: 'Email *',       kn: 'ಇಮೇಲ್ *' },
+  field_password_req:     { en: 'Password *',    kn: 'ಪಾಸ್‌ವರ್ಡ್ *' },
+  field_confirm_pw_req:   { en: 'Confirm Password *', kn: 'ಪಾಸ್‌ವರ್ಡ್ ದೃಢೀಕರಿಸಿ *' },
+  field_mela_name_req:    { en: 'Mela Name *',   kn: 'ಮೇಳದ ಹೆಸರು *' },
+  field_region_req:       { en: 'Region *',      kn: 'ಪ್ರಾಂತ್ಯ *' },
+  field_your_name_req:    { en: 'Your Name *',   kn: 'ನಿಮ್ಮ ಹೆಸರು *' },
+  placeholder_name:       { en: 'eg: Suresh Kumar', kn: 'ಉದಾ: ಸುರೇಶ್ ಕುಮಾರ್' },
+  placeholder_org_name:   { en: 'eg: Ramesh Shetty', kn: 'ಉದಾ: ರಮೇಶ್ ಶೆಟ್ಟಿ' },
+  placeholder_mela:       { en: 'eg: Kateel Mela', kn: 'ಉದಾ: ಕಟೀಲು ಮೇಳ' },
+  placeholder_email:      { en: 'your@email.com', kn: 'your@email.com' },
+  placeholder_phone:      { en: '9876543210',     kn: '9876543210' },
+  placeholder_min6:       { en: 'Min 6 characters', kn: 'ಕನಿಷ್ಠ 6 ಅಕ್ಷರಗಳು' },
+  placeholder_repeat_pw:  { en: 'Repeat password', kn: 'ಪಾಸ್‌ವರ್ಡ್ ಮರುಪ್ರವೇಶಿಸಿ' },
+  placeholder_your_pw:    { en: 'Your password', kn: 'ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್' },
+  err_fill_required:      { en: 'Please fill all required fields.', kn: 'ದಯವಿಟ್ಟು ಎಲ್ಲಾ ಅಗತ್ಯ ಕ್ಷೇತ್ರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ.' },
+  err_pw_mismatch:        { en: 'Passwords do not match.', kn: 'ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ.' },
+  err_pw_min6:            { en: 'Password must be at least 6 characters.', kn: 'ಪಾಸ್‌ವರ್ಡ್ ಕನಿಷ್ಠ 6 ಅಕ್ಷರಗಳಿರಬೇಕು.' },
+  err_enter_email_pw:     { en: 'Please enter email and password.', kn: 'ದಯವಿಟ್ಟು ಇಮೇಲ್ ಮತ್ತು ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ.' },
+  err_registration_failed:{ en: 'Registration failed.', kn: 'ನೋಂದಣಿ ವಿಫಲವಾಗಿದೆ.' },
+  err_login_failed:       { en: 'Login failed.', kn: 'ಲಾಗಿನ್ ವಿಫಲವಾಗಿದೆ.' },
+
+  // ── Organiser dashboard ────────────────────────────────────
+  dashboard_today:        { en: 'Today',  kn: 'ಇಂದು' },
+  confirm_delete_show:    { en: 'Delete this show? This cannot be undone.', kn: 'ಈ ಪ್ರದರ್ಶನವನ್ನು ಅಳಿಸಬೇಕೆ? ಇದನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗುವುದಿಲ್ಲ.' },
+  show_deleted:           { en: '✅ Show deleted successfully.', kn: '✅ ಪ್ರದರ್ಶನ ಯಶಸ್ವಿಯಾಗಿ ಅಳಿಸಲಾಗಿದೆ.' },
+  show_delete_failed:     { en: '❌ Failed to delete show.', kn: '❌ ಪ್ರದರ್ಶನ ಅಳಿಸಲು ವಿಫಲವಾಗಿದೆ.' },
+  stat_total_shows:       { en: 'Total Shows', kn: 'ಒಟ್ಟು ಪ್ರದರ್ಶನಗಳು' },
+  stat_tonight:           { en: 'Tonight',     kn: 'ಇಂದು ರಾತ್ರಿ' },
+  stat_upcoming:          { en: 'Upcoming',    kn: 'ಮುಂಬರುವ' },
+  stat_featured:          { en: 'Featured',    kn: 'ವೈಶಿಷ್ಟ್ಯ' },
+  post_tonight_show:      { en: "Post Tonight's Show", kn: 'ಇಂದಿನ ಪ್ರದರ್ಶನ ಪೋಸ್ಟ್ ಮಾಡಿ' },
+  pick_today_date:        { en: "Pick today's date", kn: 'ಇಂದಿನ ದಿನಾಂಕ ಆಯ್ಕೆಮಾಡಿ' },
+  auto_appears_tonight:   { en: "→ auto appears in Tonight's section", kn: '→ ಇಂದಿನ ಪ್ರದರ್ಶನ ವಿಭಾಗದಲ್ಲಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಕಾಣಿಸುತ್ತದೆ' },
+  fetching_your_shows:    { en: 'Fetching your shows...', kn: 'ನಿಮ್ಮ ಪ್ರದರ್ಶನಗಳನ್ನು ತರಲಾಗುತ್ತಿದೆ...' },
+  all_your_shows:         { en: 'All Your Shows', kn: 'ನಿಮ್ಮ ಎಲ್ಲಾ ಪ್ರದರ್ಶನಗಳು' },
+  no_shows_yet:           { en: 'No shows yet. Click "+ Add Show" to post your first show!',
+                            kn: 'ಇನ್ನೂ ಯಾವುದೇ ಪ್ರದರ್ಶನಗಳಿಲ್ಲ. ನಿಮ್ಮ ಮೊದಲ ಪ್ರದರ್ಶನ ಪೋಸ್ಟ್ ಮಾಡಲು "+ ಪ್ರದರ್ಶನ ಸೇರಿಸಿ" ಕ್ಲಿಕ್ ಮಾಡಿ!' },
+
+  // ── Add/Edit show ──────────────────────────────────────────
+  posting_as:             { en: 'Posting as', kn: 'ಪೋಸ್ಟ್ ಮಾಡುತ್ತಿರುವವರು' },
+  updating_show:          { en: 'Updating', kn: 'ನವೀಕರಿಸಲಾಗುತ್ತಿದೆ' },
+  err_fill_required_star: { en: 'Please fill all required fields marked with *', kn: 'ದಯವಿಟ್ಟು * ಗುರುತಿಸಿದ ಎಲ್ಲಾ ಅಗತ್ಯ ಕ್ಷೇತ್ರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ' },
+  err_fill_required_plain:{ en: 'Please fill all required fields.', kn: 'ದಯವಿಟ್ಟು ಎಲ್ಲಾ ಅಗತ್ಯ ಕ್ಷೇತ್ರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ.' },
+  err_add_show_failed:    { en: 'Failed to add show.', kn: 'ಪ್ರದರ್ಶನ ಸೇರಿಸಲು ವಿಫಲವಾಗಿದೆ.' },
+  err_update_show_failed: { en: 'Failed to update show.', kn: 'ಪ್ರದರ್ಶನ ನವೀಕರಿಸಲು ವಿಫಲವಾಗಿದೆ.' },
+  show_added_tonight:     { en: "Showing in Tonight's section now.", kn: 'ಈಗ ಇಂದಿನ ಪ್ರದರ್ಶನ ವಿಭಾಗದಲ್ಲಿ ತೋರಿಸಲಾಗುತ್ತಿದೆ.' },
+  show_added_visible:     { en: 'Visible on portal.', kn: 'ಪೋರ್ಟಲ್‌ನಲ್ಲಿ ಗೋಚರಿಸುತ್ತದೆ.' },
+  show_updated_success:   { en: 'updated successfully!', kn: 'ಯಶಸ್ವಿಯಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ!' },
+  hint_today_tonight:     { en: "Select today's date", kn: 'ಇಂದಿನ ದಿನಾಂಕ ಆಯ್ಕೆಮಾಡಿ' },
+  hint_auto_tonight:       { en: '→ show automatically appears in Tonight\'s section', kn: '→ ಪ್ರದರ್ಶನ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಇಂದಿನ ಪ್ರದರ್ಶನ ವಿಭಾಗದಲ್ಲಿ ಕಾಣಿಸುತ್ತದೆ' },
+  hint_edit_today_tonight: { en: 'Date set to today', kn: 'ದಿನಾಂಕವನ್ನು ಇಂದಿನಂತೆ ಹೊಂದಿಸಲಾಗಿದೆ' },
+  hint_edit_auto_tonight:  { en: "= automatically marked as Tonight's show", kn: '= ಇಂದಿನ ಪ್ರದರ್ಶನವಾಗಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಗುರುತಿಸಲಾಗಿದೆ' },
+  loading_show:            { en: 'Loading show...', kn: 'ಪ್ರದರ್ಶನ ಲೋಡ್ ಆಗುತ್ತಿದೆ...' },
+  show_not_found:          { en: 'Show not found.', kn: 'ಪ್ರದರ್ಶನ ಕಂಡುಬಂದಿಲ್ಲ.' },
+  btn_add_show_to_portal:  { en: 'Add Show to Portal', kn: 'ಪೋರ್ಟಲ್‌ಗೆ ಸೇರಿಸಿ' },
+  btn_update_show:         { en: 'Update Show', kn: 'ಪ್ರದರ್ಶನ ನವೀಕರಿಸಿ' },
+  btn_saving:              { en: 'Saving...', kn: 'ಉಳಿಸಲಾಗುತ್ತಿದೆ...' },
+
+
+  // ── Show form fields ───────────────────────────────────────
+  sf_prasanga_name:    { en: 'Prasanga Name *', kn: 'ಪ್ರಸಂಗದ ಹೆಸರು *' },
+  sf_mela_name:        { en: 'Mela Name *',     kn: 'ಮೇಳದ ಹೆಸರು *' },
+  sf_troupe_no:        { en: 'Troupe No',       kn: 'ತಂಡ ಸಂಖ್ಯೆ' },
+  sf_style:            { en: 'Style *',         kn: 'ಶೈಲಿ *' },
+  sf_venue:            { en: 'Venue *',         kn: 'ಸ್ಥಳ *' },
+  sf_district:         { en: 'District *',      kn: 'ಜಿಲ್ಲೆ *' },
+  sf_epic:             { en: 'Epic / Source',   kn: 'ಮೂಲ ಗ್ರಂಥ' },
+  sf_date:             { en: 'Date *',          kn: 'ದಿನಾಂಕ *' },
+  sf_start_time:       { en: 'Start Time *',    kn: 'ಪ್ರಾರಂಭ ಸಮಯ *' },
+  sf_end_time:         { en: 'End Time *',      kn: 'ಮುಗಿಯುವ ಸಮಯ *' },
+  sf_ticket_price:     { en: 'Ticket Price',    kn: 'ಟಿಕೆಟ್ ದರ' },
+  sf_latitude:         { en: 'Latitude (GPS)',  kn: 'ಅಕ್ಷಾಂಶ (GPS)' },
+  sf_longitude:        { en: 'Longitude (GPS)', kn: 'ರೇಖಾಂಶ (GPS)' },
+  sf_tonight_show:     { en: "🔴 Tonight's show", kn: '🔴 ಇಂದಿನ ಪ್ರದರ್ಶನ' },
+  sf_featured_show:    { en: '⭐ Featured show',  kn: '⭐ ವೈಶಿಷ್ಟ್ಯ ಪ್ರದರ್ಶನ' },
+  sf_select:           { en: 'Select...',        kn: 'ಆಯ್ಕೆಮಾಡಿ...' },
+
+  // ── Mela card ──────────────────────────────────────────────
+  est_label:     { en: 'Est.',     kn: 'ಸ್ಥಾಪನೆ' },
+  troupes_label: { en: 'Troupes',  kn: 'ತಂಡಗಳು' },
+  shows_label:   { en: 'Shows',    kn: 'ಪ್ರದರ್ಶನಗಳು' },
+}
+
+export function t(key, lang) {
+  const entry = dict[key]
+  if (!entry) return key
+  return entry[lang] || entry.en
+}
+
+export function both(key) {
+  const entry = dict[key]
+  if (!entry) return { en: key, kn: key }
+  return entry
+}
+
+export default dict

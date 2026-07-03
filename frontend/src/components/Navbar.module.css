@@ -1,0 +1,17 @@
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;transition:all 0.3s ease;}
+.nav.scrolled{background:rgba(13,10,6,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0.6rem 2rem;}
+.inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
+.brand{display:flex;flex-direction:column;line-height:1;text-decoration:none;}
+.brandKannada{font-family:var(--font-kannada);font-size:13px;color:var(--gold);letter-spacing:0.05em;}
+.brandEn{font-family:var(--font-display);font-size:20px;color:var(--text-primary);letter-spacing:0.08em;}
+.links{display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;}
+.link{font-family:var(--font-body);font-size:15px;color:var(--text-secondary);text-decoration:none;letter-spacing:0.03em;transition:color 0.2s;position:relative;}
+.link::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s ease;}
+.link:hover{color:var(--gold-light);}.link:hover::after,.link.active::after{transform:scaleX(1);}.link.active{color:var(--gold);}
+.menuBtn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.menuBtn span{display:block;width:22px;height:1.5px;background:var(--text-secondary);transition:all 0.2s;}
+@media(max-width:900px){
+  .menuBtn{display:flex;}
+  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(13,10,6,0.98);border-bottom:1px solid var(--border);padding:1.5rem 2rem;gap:1rem;align-items:flex-start;}
+  .links.open{display:flex;}
+}
