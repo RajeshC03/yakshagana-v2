@@ -106,10 +106,10 @@ export default function Home() {
           </div>
           <div style={{ display: 'flex', gap: '2rem', marginTop: '3rem', flexWrap: 'wrap' }}>
             {[
-              {num:'40+',label:t('stat_active_melas',lang)},
-              {num:'12,000',label:t('stat_shows_per_year',lang)},
+              {num:'25+',label:t('stat_active_melas',lang)},
+              {num:'6000+',label:t('stat_shows_per_year',lang)},
               {num:t('season_months', lang), label:t('stat_season', lang)},
-              {num:'1,000+',label:t('stat_artists',lang)},
+              {num:'200+',label:t('stat_artists',lang)},
             ].map(s=>(
               <div key={s.label} style={{ borderLeft: '2px solid var(--crimson)', paddingLeft: '1rem' }}>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, color: 'var(--gold)', lineHeight: 1 }}>{s.num}</div>

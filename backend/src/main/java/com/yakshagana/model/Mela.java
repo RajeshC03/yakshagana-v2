@@ -18,7 +18,6 @@ public class Mela {
     // Basic Information
     private String name;
     private String kannadaName;
-
     private String fullName;
 
     // Region
@@ -35,7 +34,9 @@ public class Mela {
 
     private int troupeCount;
 
+    // Founded Year
     private String foundedYear;
+    private String foundedYearKn;
 
     // Deity
     private String deity;

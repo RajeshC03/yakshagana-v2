@@ -112,8 +112,8 @@ const dict = {
   live_schedule_today: { en: 'Latest Updates · Today', kn: 'ಇತ್ತೀಚಿನ ಮಾಹಿತಿ · ಇಂದು' },
   no_shows_found:      { en: 'No shows found matching your filters.', kn: 'ನಿಮ್ಮ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಹೊಂದುವ ಯಾವುದೇ ಪ್ರದರ್ಶನ ಕಂಡುಬಂದಿಲ್ಲ.' },
   fetching_shows:      { en: 'Fetching shows from database...', kn: 'ಡೇಟಾಬೇಸ್‌ನಿಂದ ಪ್ರದರ್ಶನಗಳನ್ನು ತರಲಾಗುತ್ತಿದೆ...' },
-  showing_n_shows:     { en: 'Showing', kn: 'ತೋರಿಸಲಾಗುತ್ತಿದೆ' },
-  shows_word:          { en: 'show', kn: 'ಪ್ರದರ್ಶನ' },
+  showing_n_shows:     { en: 'Showing', kn: 'ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತಿದೆ ' },
+  shows_word:          { en: 'show', kn: ' ಪ್ರದರ್ಶನ(ಗಳು)' },
   live_from_mysql:     { en: 'Latest Updates', kn: 'ಇತ್ತೀಚಿನ ಮಾಹಿತಿ' },
 
   // ── Melas page ─────────────────────────────────────────────
@@ -150,7 +150,7 @@ const dict = {
   mela_not_found:        { en: 'Mela not found.', kn: 'ಮೇಳ ಕಂಡುಬಂದಿಲ್ಲ.' },
   mela_login_desc:       { en: 'This mela is part of our full directory, available after login or registration.',
                             kn: 'ಈ ಮೇಳವು ನಮ್ಮ ಸಂಪೂರ್ಣ ಪಟ್ಟಿಯ ಭಾಗವಾಗಿದ್ದು, ಲಾಗಿನ್ ಅಥವಾ ನೋಂದಣಿಯ ನಂತರ ಲಭ್ಯವಿದೆ.' },
-  stat_troupes:          { en: 'Troupes',        kn: 'ತಂಡಗಳು' },
+  stat_troupes:          { en: 'Troupes',        kn: 'ಒಟ್ಟು ಮೇಳಗಳ ಸಂಖ್ಯೆ' },
   stat_shows_season:     { en: 'Shows/Season',   kn: 'ಪ್ರದರ್ಶನ/ಋತು' },
   stat_style:            { en: 'Style',          kn: 'ಶೈಲಿ' },
   stat_founded:          { en: 'Founded',        kn: 'ಸ್ಥಾಪಿತ' },

@@ -30,11 +30,11 @@ export default function ShowCard({ show, onDelete, onEdit }) {
 
   return (
     <div style={{
-      background: 'var(--bg-card)', border: '1px solid var(--border)',
-      borderRadius: 12, padding: '1.25rem',
+      background: 'var(--bg-card)', border: '3px solid var(--border)',
+      borderRadius: 16, padding: '1.25rem',
       transition: 'border-color 0.2s, transform 0.2s', position: 'relative'
     }}
-      onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(201,168,76,0.4)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
+      onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(247, 216, 131, 0.72)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
       onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)' }}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8, marginBottom: 10 }}>

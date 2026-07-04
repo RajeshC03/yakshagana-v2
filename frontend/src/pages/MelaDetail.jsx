@@ -81,15 +81,22 @@ export default function MelaDetail() {
             <h1 style={{ fontFamily:'var(--font-display)',fontSize:28,color:'var(--gold-pale)',letterSpacing:'0.04em',marginBottom:8 }}>{mela.name}</h1>
           </>
         )}
-        <div style={{ fontSize: 15, color: 'rgba(255,255,255,0.55)', marginBottom: '1.25rem' }}>{mela.fullName}</div>
+        <div style={{ fontSize: 17, color: 'rgba(255,255,255,0.55)', marginBottom: '1.25rem' }}>{mela.fullName}</div>
         <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
           {[
             { l: t('stat_troupes',lang), v: mela.troupeCount },
-            { l: t('stat_shows_season',lang), v: isLoggedIn ? shows.length : mela.showsThisSeason },
+            // { l: t('stat_shows_season',lang), v: isLoggedIn ? shows.length : mela.showsThisSeason },
             { l: t('stat_style',lang), v: lang==='kn' ? mela.styleKn : mela.style },
-            { l: t('stat_founded',lang), v: mela.foundedYear },
+            // { l: t('stat_founded',lang), v: mela.foundedYear },
+            {
+            l: t('stat_founded', lang),
+            v: lang === 'kn' && mela.foundedYearKn
+                ? mela.foundedYearKn
+                : mela.foundedYear
+          },
+
           ].map(s => (
-            <div key={s.l}><div style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--gold)', lineHeight: 1 }}>{s.v}</div><div style={{ fontSize: 14, color: 'rgba(255,255,255,0.45)', marginTop: 3 }}>{s.l}</div></div>
+            <div key={s.l}><div style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--gold)', lineHeight: 1,fontWeight: 'bold' }}>{s.v}</div><div style={{ fontSize: 14, color: 'rgba(255,255,255,0.45)', marginTop: 3,fontWeight: 'bold' }}>{s.l}</div></div>
           ))}
         </div>
       </div>
