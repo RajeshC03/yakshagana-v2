@@ -21,6 +21,18 @@ export default function OrgDashboard() {
 
   const today = getLocalToday()
 
+
+  // Display English or Kannada depending on language
+const organizerName =
+  lang === "kn" && authOrg?.nameKn
+    ? authOrg.nameKn
+    : authOrg?.name;
+
+const melaName =
+  lang === "kn" && authOrg?.melaNameKn
+    ? authOrg.melaNameKn
+    : authOrg?.melaName;
+
   const fetchShows = () => {
     setLoading(true)
     showsAPI.getAll({ melaName: authOrg?.melaName })
@@ -63,10 +75,11 @@ export default function OrgDashboard() {
       }}>
         <div>
           <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, color: 'var(--gold-light)', letterSpacing: '0.04em', marginBottom: 4 }}>
-            {t('h_dashboard_welcome',lang)}, {authOrg?.name}! 🎭
+            {/* {t('h_dashboard_welcome',lang)}, {authOrg?.name}! 🎭 */}
+            {t('h_dashboard_welcome',lang)}, {organizerName}! 🎭
           </div>
           <div style={{ fontSize: 14, color: 'var(--text-muted)' }}>
-            {authOrg?.melaName} · {t('dashboard_today',lang)}: <span style={{ color: 'var(--gold)' }}>{today}</span>
+            {melaName} · {t('dashboard_today',lang)}: <span style={{ color: 'var(--gold)' }}>{today}</span>
           </div>
         </div>
         <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>

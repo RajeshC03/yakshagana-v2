@@ -36,11 +36,20 @@ export default function MelasPage() {
 
   const grouped = {}
   if (isLoggedIn) {
+    // filtered.forEach(m => {
+    //   const r = m.region || 'Other'
+    //   if (!grouped[r]) grouped[r] = []
+    //   grouped[r].push(m)
+    // })
     filtered.forEach(m => {
-      const r = m.region || 'Other'
-      if (!grouped[r]) grouped[r] = []
-      grouped[r].push(m)
-    })
+  const r =
+    lang === 'kn'
+      ? (m.regionKn || m.region)
+      : m.region
+
+  if (!grouped[r]) grouped[r] = []
+  grouped[r].push(m)
+})
   }
 
   return (

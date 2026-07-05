@@ -14,12 +14,45 @@ export default function AddShow() {
 
   const today = new Date().toISOString().split('T')[0]
 
+  // const [form, setForm] = useState({
+  //   prasanga: '', melaName: authOrg?.melaName || '', troupeNo: '',
+  //   venue: '', district: '', date: '', startTime: '', endTime: '',
+  //   style: '', epic: '', isTonight: false, isFeatured: false,
+  //   ticketPrice: 'Free', latitude: '', longitude: ''
+  // })
+
   const [form, setForm] = useState({
-    prasanga: '', melaName: authOrg?.melaName || '', troupeNo: '',
-    venue: '', district: '', date: '', startTime: '', endTime: '',
-    style: '', epic: '', isTonight: false, isFeatured: false,
-    ticketPrice: 'Free', latitude: '', longitude: ''
-  })
+  // English
+  prasanga: '',
+  melaName: authOrg?.melaName || '',
+  melaNameKn: authOrg?.melaNameKn || '',
+  venue: '',
+  district: '',
+  style: '',
+  epic: '',
+
+  // Kannada
+  prasangaKn: '',
+  melaNameKn: '',
+  venueKn: '',
+  districtKn: '',
+  styleKn: '',
+  epicKn: '',
+
+  troupeNo: '',
+  date: '',
+  startTime: '',
+  endTime: '',
+
+  isTonight: false,
+  isFeatured: false,
+
+  ticketPrice: 'Free',
+  latitude: '',
+  longitude: ''
+})
+
+
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState('')
   const [error,   setError]   = useState('')
@@ -35,7 +68,26 @@ export default function AddShow() {
 
   const onSubmit = async e => {
     e.preventDefault()
-    if (!form.prasanga || !form.venue || !form.district || !form.date || !form.startTime || !form.endTime || !form.style)
+    if (
+    !form.prasanga ||
+    !form.prasangaKn ||
+
+    !form.venue ||
+    !form.venueKn ||
+
+    !form.district ||
+    !form.districtKn ||
+
+    !form.style ||
+    !form.styleKn ||
+
+    !form.epic ||
+    !form.epicKn ||
+
+    !form.date ||
+    !form.startTime ||
+    !form.endTime
+)
       return setError(t('err_fill_required_star',lang))
 
     setLoading(true)
@@ -47,12 +99,44 @@ export default function AddShow() {
         longitude:  form.longitude ? parseFloat(form.longitude) : null,
       })
       setSuccess(`✅ "${form.prasanga}" added! ${form.date === today ? t('show_added_tonight',lang) : t('show_added_visible',lang)}`)
+      // setForm(p => ({
+      //   ...p, prasanga: '', troupeNo: '', venue: '', district: '',
+      //   date: '', startTime: '', endTime: '', style: '', epic: '',
+      //   isTonight: false, isFeatured: false,
+      //   ticketPrice: 'Free', latitude: '', longitude: ''
+      // }))
+
       setForm(p => ({
-        ...p, prasanga: '', troupeNo: '', venue: '', district: '',
-        date: '', startTime: '', endTime: '', style: '', epic: '',
-        isTonight: false, isFeatured: false,
-        ticketPrice: 'Free', latitude: '', longitude: ''
-      }))
+    ...p,
+
+    // English
+    prasanga: '',
+    venue: '',
+    district: '',
+    style: '',
+    epic: '',
+
+    // Kannada
+    prasangaKn: '',
+    venueKn: '',
+    districtKn: '',
+    styleKn: '',
+    epicKn: '',
+
+    troupeNo: '',
+    date: '',
+    startTime: '',
+    endTime: '',
+
+    isTonight: false,
+    isFeatured: false,
+
+    ticketPrice: 'Free',
+    latitude: '',
+    longitude: ''
+}))
+
+
     } catch (err) {
       setError(err.response?.data?.message || t('err_add_show_failed',lang))
     } finally {

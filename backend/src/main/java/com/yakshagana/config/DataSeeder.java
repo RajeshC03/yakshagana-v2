@@ -1433,27 +1433,63 @@ Mela d7 = mela(
         ));
 
         // ── SHOWS ─────────────────────────────────────────────────────────
+        // LocalDate today = LocalDate.now();
+        // sr.saveAll(Arrays.asList(
+        //     new Show(null,"Devi Mahatme","Kateel Mela","Troupe 3",
+        //         "Kateel Sri Durgaparameshwari Temple Grounds","Dakshina Kannada",
+        //         today,"20:30","Dawn","Tenkutittu","Devi Bhagavatha",true,true,"Free",13.0039,74.9742,ml.get(0)),
+        //     new Show(null,"Karna Parva","Dharmasthala Mela","Troupe 1",
+        //         "Dharmasthala Open Stage","Dakshina Kannada",
+        //         today,"21:00","00:30","Tenkutittu","Mahabharata",true,false,"Free",12.9541,75.3839,ml.get(1)),
+        //     new Show(null,"Srikrishna Sandhana","Idagunji Mela","Main Troupe",
+        //         "Idagunji Mahaganapati Temple","Uttara Kannada",
+        //         today.plusDays(1),"20:00","Dawn","Badagutittu","Mahabharata",false,true,"Free",14.2095,74.5613,ml.get(4)),
+        //     new Show(null,"Ramayana Sangraha","Saligrama Mela","Main Troupe",
+        //         "Saligrama Veeranarayan Temple","Udupi",
+        //         today.plusDays(3),"19:00","23:00","Badagutittu","Ramayana",false,true,"Free",13.3379,74.7438,ml.get(2)),
+        //     new Show(null,"Subramanya Vijaya","Mandarthi Mela","Troupe 2",
+        //         "Mandarthi Durgaparameshwari Temple","Udupi",
+        //         today.plusDays(4),"20:30","Dawn","Badagutittu","Skanda Purana",false,false,"Free",13.4637,74.8311,ml.get(3)),
+        //     new Show(null,"Draupadi Vasthrapaharana","Dharmasthala Mela","Troupe 2",
+        //         "Ujire Community Hall","Dakshina Kannada",
+        //         today.plusDays(5),"20:00","23:30","Tenkutittu","Mahabharata",false,false,"Rs.50",12.9612,75.3712,ml.get(1))
+        // ));
+
+        // ── SHOWS ─────────────────────────────────────────────────────────
         LocalDate today = LocalDate.now();
+
         sr.saveAll(Arrays.asList(
-            new Show(null,"Devi Mahatme","Kateel Mela","Troupe 3",
-                "Kateel Sri Durgaparameshwari Temple Grounds","Dakshina Kannada",
-                today,"20:30","Dawn","Tenkutittu","Devi Bhagavatha",true,true,"Free",13.0039,74.9742,ml.get(0)),
-            new Show(null,"Karna Parva","Dharmasthala Mela","Troupe 1",
-                "Dharmasthala Open Stage","Dakshina Kannada",
-                today,"21:00","00:30","Tenkutittu","Mahabharata",true,false,"Free",12.9541,75.3839,ml.get(1)),
-            new Show(null,"Srikrishna Sandhana","Idagunji Mela","Main Troupe",
-                "Idagunji Mahaganapati Temple","Uttara Kannada",
-                today.plusDays(1),"20:00","Dawn","Badagutittu","Mahabharata",false,true,"Free",14.2095,74.5613,ml.get(4)),
-            new Show(null,"Ramayana Sangraha","Saligrama Mela","Main Troupe",
-                "Saligrama Veeranarayan Temple","Udupi",
-                today.plusDays(3),"19:00","23:00","Badagutittu","Ramayana",false,true,"Free",13.3379,74.7438,ml.get(2)),
-            new Show(null,"Subramanya Vijaya","Mandarthi Mela","Troupe 2",
-                "Mandarthi Durgaparameshwari Temple","Udupi",
-                today.plusDays(4),"20:30","Dawn","Badagutittu","Skanda Purana",false,false,"Free",13.4637,74.8311,ml.get(3)),
-            new Show(null,"Draupadi Vasthrapaharana","Dharmasthala Mela","Troupe 2",
-                "Ujire Community Hall","Dakshina Kannada",
-                today.plusDays(5),"20:00","23:30","Tenkutittu","Mahabharata",false,false,"Rs.50",12.9612,75.3712,ml.get(1))
-        ));
+
+    Show.builder()
+        .prasanga("Devi Mahatme")
+        .melaName("Kateel Mela")
+        .troupeNo("Troupe 3")
+        .venue("Kateel Sri Durgaparameshwari Temple Grounds")
+        .district("Dakshina Kannada")
+        .style("Tenkutittu")
+        .epic("Devi Bhagavatha")
+
+        .prasangaKn("ದೇವಿ ಮಹಾತ್ಮೆ")
+        .melaNameKn("ಕಟೀಲು ಮೇಳ")
+        .venueKn("ಕಟೀಲು ಶ್ರೀ ದುರ್ಗಾಪರಮೇಶ್ವರಿ ದೇವಸ್ಥಾನ ಮೈದಾನ")
+        .districtKn("ದಕ್ಷಿಣ ಕನ್ನಡ")
+        .styleKn("ತೆಂಕುತಿಟ್ಟು")
+        .epicKn("ದೇವಿ ಭಾಗವತ")
+
+        .date(today)
+        .startTime("20:30")
+        .endTime("Dawn")
+        .isTonight(true)
+        .isFeatured(true)
+        .ticketPrice("Free")
+        .latitude(13.0039)
+        .longitude(74.9742)
+        .mela(ml.get(0))
+        .build()
+
+    // Second Show.builder() goes here
+
+));
 
         // ── PRASANGAS ─────────────────────────────────────────────────────
         pr.saveAll(Arrays.asList(

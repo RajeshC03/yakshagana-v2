@@ -4,6 +4,8 @@ import useLiveUpdates from '../hooks/useLiveUpdates'
 export default function LiveBanner() {
   const { latestUpdate } = useLiveUpdates()
   const [msg, setMsg]   = useState("Loading tonight's shows...")
+
+
   const [fade, setFade] = useState(true)
 
   useEffect(() => {

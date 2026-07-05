@@ -21,10 +21,15 @@ export default function MelaCard({mela}){
       <div style={{padding:'1rem 1.25rem'}}>
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:8}}>
           <div>
-            <div style={{fontSize: 15,color:'var(--text-secondary)'}}>📍 {mela.location}</div>
+            <div style={{fontSize: 15,color:'var(--text-secondary)'}}>📍 {lang === 'kn'
+      ? (mela.locationKn || mela.location)
+      : mela.location}</div>
             <div style={{fontSize: 14,color:'var(--text-muted)',marginTop:2}}>{t('est_label',lang)} {mela.foundedYear}</div>
           </div>
-          <span style={{fontSize: 13,padding:'3px 9px',borderRadius:12,background:sc+'33',color:mela.style==='Tenkutittu'?'#FF9090':'#90A0FF',border:`1px solid ${sc}55`,flexShrink:0}}>{mela.style}</span>
+          <span style={{fontSize: 13,padding:'3px 9px',borderRadius:12,background:sc+'33',color:mela.style==='Tenkutittu'?'#FF9090':'#90A0FF',border:`1px solid ${sc}55`,flexShrink:0}}>{lang === 'kn'
+      ? (mela.styleKn || mela.style)
+      : mela.style}</span>
+      
         </div>
         <p style={{fontSize: 15,color:'var(--text-muted)',lineHeight:1.6,marginBottom:10}}>{(desc||'').slice(0,100)}…</p>
         <div style={{display:'flex',gap:'1.5rem',paddingTop:8,borderTop:'1px solid var(--border)'}}>

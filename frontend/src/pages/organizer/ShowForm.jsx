@@ -58,17 +58,101 @@ export default function ShowForm({ form, onChange, onSubmit, loading, submitLabe
   return (
     <form onSubmit={onSubmit} style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 14, padding: '2rem' }}>
       <Row>
-        <FI label={t('sf_prasanga_name',lang)} name="prasanga" placeholder="eg: Devi Mahatme" value={form.prasanga} onChange={onChange}/>
-        <FI label={t('sf_mela_name',lang)} name="melaName" placeholder="eg: Kateel Mela" value={form.melaName} onChange={onChange}/>
-      </Row>
+  <FI
+    label="Prasanga (English)"
+    name="prasanga"
+    value={form.prasanga}
+    onChange={onChange}
+  />
+
+  <FI
+    label="ಪ್ರಸಂಗ (Kannada)"
+    name="prasangaKn"
+    value={form.prasangaKn}
+    onChange={onChange}
+  />
+</Row>
+
+<Row>
+  <FI
+    label="Mela Name (English)"
+    name="melaName"
+    value={form.melaName}
+    onChange={onChange}
+  />
+
+  <FI
+    label="ಮೇಳದ ಹೆಸರು (Kannada)"
+    name="melaNameKn"
+    value={form.melaNameKn}
+    onChange={onChange}
+  />
+</Row>
       <Row>
         <FI label={t('sf_troupe_no',lang)} name="troupeNo" placeholder="eg: Troupe 3" value={form.troupeNo} onChange={onChange}/>
-        <SI label={t('sf_style',lang)} name="style" options={STYLES} value={form.style} onChange={onChange} selectLabel={selectLabel}/>
+        <SI
+    label="Style (English)"
+    name="style"
+    options={STYLES}
+    value={form.style}
+    onChange={onChange}
+    selectLabel={selectLabel}
+/>
+
+<FI
+    label="ಶೈಲಿ (Kannada)"
+    name="styleKn"
+    value={form.styleKn}
+    onChange={onChange}
+/>
       </Row>
-      <FI label={t('sf_venue',lang)} name="venue" placeholder="eg: Kateel Temple Grounds" value={form.venue} onChange={onChange} full/>
+      <FI
+    label="Venue (English)"
+    name="venue"
+    value={form.venue}
+    onChange={onChange}
+    full
+/>
+
+<FI
+    label="ಸ್ಥಳ (Kannada)"
+    name="venueKn"
+    value={form.venueKn}
+    onChange={onChange}
+    full
+/>
       <Row>
-        <SI label={t('sf_district',lang)} name="district" options={DISTRICTS} value={form.district} onChange={onChange} selectLabel={selectLabel}/>
-        <SI label={t('sf_epic',lang)} name="epic" options={EPICS} value={form.epic} onChange={onChange} selectLabel={selectLabel}/>
+        <SI
+    label="District (English)"
+    name="district"
+    options={DISTRICTS}
+    value={form.district}
+    onChange={onChange}
+    selectLabel={selectLabel}
+/>
+
+<FI
+    label="ಜಿಲ್ಲೆ (Kannada)"
+    name="districtKn"
+    value={form.districtKn}
+    onChange={onChange}
+/>
+
+        <SI
+    label="Epic (English)"
+    name="epic"
+    options={EPICS}
+    value={form.epic}
+    onChange={onChange}
+    selectLabel={selectLabel}
+/>
+
+<FI
+    label="ಮಹಾಕಾವ್ಯ (Kannada)"
+    name="epicKn"
+    value={form.epicKn}
+    onChange={onChange}
+/>
       </Row>
       <Row>
         <FI label={t('sf_date',lang)} name="date" type="date" value={form.date} onChange={onChange}/>

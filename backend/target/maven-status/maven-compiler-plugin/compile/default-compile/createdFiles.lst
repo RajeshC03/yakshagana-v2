@@ -8,6 +8,7 @@ com/yakshagana/model/Organizer.class
 com/yakshagana/config/CorsConfig.class
 com/yakshagana/model/User.class
 com/yakshagana/YakshaganaApplication.class
+com/yakshagana/model/Show$ShowBuilder.class
 com/yakshagana/repository/ShowRepository.class
 com/yakshagana/config/SecurityConfig.class
 com/yakshagana/repository/MelaRepository.class

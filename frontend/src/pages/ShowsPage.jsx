@@ -9,8 +9,29 @@ import ShowCard from '../components/ShowCard'
 import LiveBanner from '../components/LiveBanner'
 import Spinner from '../components/Spinner'
 
-const DISTRICTS = ['All', 'Dakshina Kannada', 'Udupi', 'Uttara Kannada']
-const STYLES    = ['All', 'Tenkutittu', 'Badagutittu']
+// const DISTRICTS = ['All', 'Dakshina Kannada', 'Udupi', 'Uttara Kannada']
+
+const DISTRICTS_EN = ['All', 'Dakshina Kannada', 'Udupi', 'Uttara Kannada']
+
+const DISTRICTS_KN = [
+  'ಎಲ್ಲಾ',
+  'ದಕ್ಷಿಣ ಕನ್ನಡ ಜಿಲ್ಲೆ',
+  'ಉಡುಪಿ ಜಿಲ್ಲೆ',
+  'ಉತ್ತರ ಕನ್ನಡ ಜಿಲ್ಲೆ'
+]
+
+
+// const STYLES    = ['All', 'Tenkutittu', 'Badagutittu']
+
+const STYLES_EN = ['All','Tenkutittu','Badagutittu']
+
+const STYLES_KN = [
+    'ಎಲ್ಲಾ',
+    'ತೆಂಕುತಿಟ್ಟು',
+    'ಬಡಗುತಿಟ್ಟು'
+]
+
+
 
 export default function ShowsPage() {
   const { authUser, authOrg } = useAuth()
@@ -113,13 +134,37 @@ export default function ShowsPage() {
           </button>
         ))}
         <span style={{ color: 'var(--border)', alignSelf: 'center', fontSize: 18 }}>|</span>
-        {DISTRICTS.map(d => (
+        {/* {DISTRICTS.map(d => (
           <button key={d} onClick={() => { setDistrict(d); setTab('all') }} {...chipBtn(district === d)}>{d}</button>
-        ))}
+        ))} */}
+
+        {(lang === 'kn' ? DISTRICTS_KN : DISTRICTS_EN).map((label, index) => (<button
+    key={index}
+    onClick={()=>{
+        setDistrict(DISTRICTS_EN[index])
+        setTab('all')
+    }}
+    {...chipBtn(district===DISTRICTS_EN[index])}
+>
+    {label}
+</button>
+))}
         <span style={{ color: 'var(--border)', alignSelf: 'center', fontSize: 18 }}>|</span>
-        {STYLES.map(s => (
+        {/* {STYLES.map(s => (
           <button key={s} onClick={() => { setStyle(s); setTab('all') }} {...chipBtn(style === s)}>{s}</button>
-        ))}
+        ))} */}
+
+        {(lang==='kn' ? STYLES_KN : STYLES_EN).map((label,index)=>(<button
+    key={index}
+    onClick={()=>{
+        setStyle(STYLES_EN[index])
+        setTab('all')
+    }}
+    {...chipBtn(style===STYLES_EN[index])}
+>
+    {label}
+</button>
+))}
       </div>
 
       {loading
