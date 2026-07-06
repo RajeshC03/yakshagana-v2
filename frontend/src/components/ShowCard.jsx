@@ -6,6 +6,23 @@ import { getLocalToday, extractDate } from '../api'
 import { iconActionBtn } from '../utils/buttonStyles'
 
 export default function ShowCard({ show, onDelete, onEdit }) {
+
+  const EPIC_KANNADA = {
+  "Mahabharata": "ಮಹಾಭಾರತ",
+  "Ramayana": "ರಾಮಾಯಣ",
+  "Devi Bhagavatha": "ದೇವಿ ಭಾಗವತ",
+  "Skanda Purana": "ಸ್ಕಂದ ಪುರಾಣ",
+  "Bhagavatha": "ಭಾಗವತ",
+  "Other": "ಇತರೆ"
+}
+
+const DISTRICT_KANNADA = {
+  "Dakshina Kannada": "ದಕ್ಷಿಣ ಕನ್ನಡ",
+  "Udupi": "ಉಡುಪಿ",
+  "Uttara Kannada": "ಉತ್ತರ ಕನ್ನಡ",
+  "Shivamogga": "ಶಿವಮೊಗ್ಗ"
+}
+
   const { authOrg } = useAuth()
   const { lang } = useLanguage()
 
@@ -40,11 +57,17 @@ export default function ShowCard({ show, onDelete, onEdit }) {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8, marginBottom: 10 }}>
         <div style={{ flex: 1 }}>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 16, color: 'var(--gold-light)', letterSpacing: '0.05em', marginBottom: 4 }}>
-            {show.prasanga}
+            {/* {show.prasanga} */}
+            {lang === "kn" && show.prasangaKn
+                      ? show.prasangaKn
+                      : show.prasanga}
           </h3>
           {show.epic && (
             <div style={{ fontSize: 13, color: 'var(--text-muted)', fontStyle: 'italic' }}>
-              {lang==='kn' ? 'ಮೂಲ' : 'from'} {show.epic}
+              {/* {lang==='kn' ? 'ಮೂಲ' : 'from'} {show.epic} */}
+              {lang === 'kn'
+                ? `ಮೂಲ ${EPIC_KANNADA[show.epic] || show.epic}`
+                : `from ${show.epic}`}
             </div>
           )}
         </div>
@@ -55,15 +78,29 @@ export default function ShowCard({ show, onDelete, onEdit }) {
 
       <div style={{ borderTop: '1px solid var(--border)', paddingTop: '0.75rem' }}>
         <div style={{ fontSize: 15, color: 'var(--gold)', fontWeight: 600, marginBottom: 6 }}>
-          🎭 {show.melaName}{show.troupeNo ? ` · ${show.troupeNo}` : ''}
+         🎭 {lang === "kn" && show.melaNameKn
+          ? show.melaNameKn
+          : show.melaName}{show.troupeNo ? ` · ${show.troupeNo}` : ''}
         </div>
         <div style={{ fontSize: 15, color: 'var(--text-secondary)', marginBottom: 4 }}>
-          📍 {show.venue}
+          {/* 📍 {show.venue} */}
+          📍 {lang === "kn" && show.venueKn
+            ? show.venueKn
+            : show.venue}
         </div>
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', fontSize: 15, color: 'var(--text-secondary)' }}>
           <span>🕗 {show.startTime}{show.endTime ? ' – ' + show.endTime : ''}</span>
-          <span>🗺️ {show.district}</span>
-          <span>🎟️ {show.ticketPrice || (lang==='kn' ? 'ಉಚಿತ' : 'Free')}</span>
+          <span>🗺️ {lang === "kn"
+                      ? (DISTRICT_KANNADA[show.district] || show.district)
+                      : show.district}</span>
+          {/* <span>🎟️ {show.ticketPrice || (lang==='kn' ? 'ಉಚಿತ' : 'Free')}</span> */}
+          <span>
+            🎟️ {
+              show.ticketPrice === "Free"
+                ? (lang === "kn" ? "ಉಚಿತ" : "Free")
+                : show.ticketPrice
+            }
+          </span>
         </div>
       </div>
 

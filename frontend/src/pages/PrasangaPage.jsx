@@ -7,12 +7,23 @@ import Spinner from '../components/Spinner'
 import ExploreBanner from '../components/ExploreBanner'
 
 export default function PrasangaPage() {
+
+  const EPIC_KANNADA = {
+  "Mahabharata": "ಮಹಾಭಾರತ",
+  "Ramayana": "ರಾಮಾಯಣ",
+  "Devi Bhagavatha": "ದೇವಿ ಭಾಗವತ",
+  "Skanda Purana": "ಸ್ಕಂದ ಪುರಾಣ",
+  "Bhagavatha": "ಭಾಗವತ",
+  "Other": "ಇತರೆ"
+}
+
   const { authUser, authOrg } = useAuth()
   const { lang } = useLanguage()
   const isLoggedIn = !!(authUser || authOrg)
 
   const [list, setList] = useState([])
   const [loading, setLoading] = useState(true)
+
 
   useEffect(() => {
     const params = isLoggedIn ? {} : { famous: true }
@@ -45,7 +56,15 @@ export default function PrasangaPage() {
                   <div style={{ fontFamily: 'var(--font-kannada)', fontSize: 14, color: 'var(--gold)', marginBottom: 3 }}>{p.nameKn}</div>
                 )}
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 19, color: 'var(--gold)', letterSpacing: '0.04em', marginBottom: 5 }}>{p.name}</h3>
-                <div style={{ fontSize: 14, color: 'var(--text-muted)', marginBottom: 8 }}>{t('from_epic',lang)} {p.epic}</div>
+                
+              {/* <div style={{ fontSize: 14, color: 'var(--text-muted)', marginBottom: 8 }}>{t('from_epic',lang)} {p.epic}</div> */}
+                <div style={{ fontSize: 14, color: 'var(--text-muted)', marginBottom: 8 }}>
+                      {t('from_epic', lang)}{" : "}
+                      {lang === "kn"
+                          ? (EPIC_KANNADA[p.epic] || p.epic)
+                          : p.epic}
+                    </div>
+
                 <p style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.75 }}>{(lang==='kn' && p.descriptionKn) ? p.descriptionKn : p.description}</p>
               </div>
             </div>

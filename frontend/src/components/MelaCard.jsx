@@ -24,7 +24,7 @@ export default function MelaCard({mela}){
             <div style={{fontSize: 15,color:'var(--text-secondary)'}}>📍 {lang === 'kn'
       ? (mela.locationKn || mela.location)
       : mela.location}</div>
-            <div style={{fontSize: 14,color:'var(--text-muted)',marginTop:2}}>{t('est_label',lang)} {mela.foundedYear}</div>
+            {/* <div style={{fontSize: 14,color:'var(--text-muted)',marginTop:2}}>{t('est_label',lang)} {mela.foundedYear}</div> */}
           </div>
           <span style={{fontSize: 13,padding:'3px 9px',borderRadius:12,background:sc+'33',color:mela.style==='Tenkutittu'?'#FF9090':'#90A0FF',border:`1px solid ${sc}55`,flexShrink:0}}>{lang === 'kn'
       ? (mela.styleKn || mela.style)
