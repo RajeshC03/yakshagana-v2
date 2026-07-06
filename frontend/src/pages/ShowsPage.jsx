@@ -11,13 +11,14 @@ import Spinner from '../components/Spinner'
 
 // const DISTRICTS = ['All', 'Dakshina Kannada', 'Udupi', 'Uttara Kannada']
 
-const DISTRICTS_EN = ['All', 'Dakshina Kannada', 'Udupi', 'Uttara Kannada']
+const DISTRICTS_EN = ['All', 'Dakshina Kannada', 'Udupi', 'Uttara Kannada','Shivamogga']
 
 const DISTRICTS_KN = [
   'ಎಲ್ಲಾ',
   'ದಕ್ಷಿಣ ಕನ್ನಡ ಜಿಲ್ಲೆ',
   'ಉಡುಪಿ ಜಿಲ್ಲೆ',
-  'ಉತ್ತರ ಕನ್ನಡ ಜಿಲ್ಲೆ'
+  'ಉತ್ತರ ಕನ್ನಡ ಜಿಲ್ಲೆ',
+  'ಶಿವಮೊಗ್ಗ'
 ]
 
 

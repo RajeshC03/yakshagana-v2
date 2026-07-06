@@ -26,20 +26,55 @@ public class ShowController {
     @PostMapping public Show create(@RequestBody Show show) {
         linkMela(show); // ✅ FIX: attach the matching Mela FK based on melaName text
         Show saved = s.saveShow(show);
-        broadcaster.sendUpdate("🎭 New show added: " + saved.getPrasanga() + " by " + saved.getMelaName() + " at " + saved.getVenue());
+        // broadcaster.sendUpdate("🎭 New show added: " + saved.getPrasanga() + " by " + saved.getMelaName() + " at " + saved.getVenue());
+        broadcaster.sendUpdate(
+    "🎭 New show added: " + saved.getPrasanga() +
+    " by " + saved.getMelaName() +
+    " at " + saved.getVenue(),
+
+    "🎭 ಹೊಸ ಪ್ರದರ್ಶನ ಸೇರಿಸಲಾಗಿದೆ: " +
+    saved.getPrasangaKn() +
+    " - " +
+    saved.getMelaNameKn() +
+    " - " +
+    saved.getVenueKn()
+);
         return saved;
     }
+
     @PutMapping("/{id}") public ResponseEntity<Show> update(@PathVariable Long id, @RequestBody Show show) {
         return s.getShowById(id).map(e -> {
             show.setId(id);
             linkMela(show); // ✅ FIX: keep FK in sync if mela name changes on edit
             Show updated = s.saveShow(show);
-            broadcaster.sendUpdate("📝 Show updated: " + updated.getPrasanga() + " by " + updated.getMelaName());
+            // broadcaster.sendUpdate("📝 Show updated: " + updated.getPrasanga() + " by " + updated.getMelaName());
+            broadcaster.sendUpdate(
+    "📝 Show updated: " + updated.getPrasanga() +
+    " by " + updated.getMelaName(),
+
+    "📝 ಪ್ರದರ್ಶನವನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ: " +
+    updated.getPrasangaKn() +
+    " - " +
+    updated.getMelaNameKn()
+);
+            
             return ResponseEntity.ok(updated);
         }).orElse(ResponseEntity.notFound().build());
     }
+
+    
     @DeleteMapping("/{id}") public ResponseEntity<Void> delete(@PathVariable Long id) {
-        s.getShowById(id).ifPresent(show -> broadcaster.sendUpdate("🗑️ Show cancelled: " + show.getPrasanga() + " by " + show.getMelaName()));
+        s.getShowById(id).ifPresent(show -> broadcaster.sendUpdate(
+    "🗑️ Show cancelled: " +
+    show.getPrasanga() +
+    " by " +
+    show.getMelaName(),
+
+    "🗑️ ಪ್ರದರ್ಶನ ರದ್ದಾಗಿದೆ: " +
+    show.getPrasangaKn() +
+    " - " +
+    show.getMelaNameKn()
+));
         s.deleteShow(id);
         return ResponseEntity.noContent().build();
     }

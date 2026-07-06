@@ -3,13 +3,15 @@ import { useLanguage } from '../../context/LanguageContext'
 import { t } from '../../data/translations'
 import { submitBtn } from '../../utils/buttonStyles'
 
-const DISTRICTS = ['Dakshina Kannada', 'Udupi', 'Uttara Kannada']
+const DISTRICTS = ['Dakshina Kannada', 'Udupi', 'Uttara Kannada','Shivamogga','Other']
 const STYLES     = ['Tenkutittu', 'Badagutittu']
 const EPICS       = ['Mahabharata', 'Ramayana', 'Devi Bhagavatha', 'Skanda Purana', 'Bhagavatha', 'Other']
 const DISTRICTS_KN = [
   'ದಕ್ಷಿಣ ಕನ್ನಡ',
   'ಉಡುಪಿ',
-  'ಉತ್ತರ ಕನ್ನಡ'
+  'ಉತ್ತರ ಕನ್ನಡ',
+  'ಶಿವಮೊಗ್ಗ',
+  'ಇತರೆ'
 ]
 
 const STYLES_KN = [

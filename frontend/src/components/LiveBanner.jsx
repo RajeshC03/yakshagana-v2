@@ -1,19 +1,43 @@
 import React, { useState, useEffect } from 'react'
 import useLiveUpdates from '../hooks/useLiveUpdates'
+import { useLanguage } from '../context/LanguageContext'
+import { t } from '../data/translations'
 
 export default function LiveBanner() {
   const { latestUpdate } = useLiveUpdates()
-  const [msg, setMsg]   = useState("Loading tonight's shows...")
-
+  const { lang } = useLanguage()
+  // const [msg, setMsg]   = useState("Loading tonight's shows...")
+  const [msg, setMsg] = useState(
+  lang === "kn"
+    ? "ಇಂದಿನ ಯಕ್ಷಗಾನ ಪ್ರದರ್ಶನಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ..."
+    : "Loading tonight's shows..."
+)
 
   const [fade, setFade] = useState(true)
 
+  // useEffect(() => {
+  //   if (latestUpdate?.message) {
+  //     setFade(false)
+  //     setTimeout(() => { setMsg(latestUpdate.message); setFade(true) }, 300)
+  //   }
+  // }, [latestUpdate])
+
   useEffect(() => {
-    if (latestUpdate?.message) {
-      setFade(false)
-      setTimeout(() => { setMsg(latestUpdate.message); setFade(true) }, 300)
-    }
-  }, [latestUpdate])
+  if (latestUpdate?.message) {
+    setFade(false)
+
+    setTimeout(() => {
+      if (lang === "kn" && latestUpdate.messageKn) {
+        setMsg(latestUpdate.messageKn)
+      } else {
+        setMsg(latestUpdate.message)
+      }
+
+      setFade(true)
+    }, 300)
+  }
+}, [latestUpdate, lang])
+
 
   return (
     <div style={{
