@@ -60,13 +60,23 @@ export default function Navbar(){
 
           {authOrg ? (
             <>
-              <Link
+              {/* <Link
                 to="/organizer/dashboard"
                 onClick={()=>setOpen(false)}
                 {...textLink('var(--gold)', 'var(--gold-light)', {fontFamily:'var(--font-body)'})}
               >
                 🎭 {authOrg.melaName}
-              </Link>
+              </Link> */}
+
+                <Link
+                  to="/organizer/dashboard"
+                  onClick={() => setOpen(false)}
+                  {...textLink('var(--gold)', 'var(--gold-light)', { fontFamily: 'var(--font-body)' })}
+                >
+                  🎭 {lang === "kn" && authOrg?.melaNameKn
+                      ? authOrg.melaNameKn
+                      : authOrg?.melaName}
+                </Link>
               <Link
                 to="/organizer/add-show"
                 onClick={()=>setOpen(false)}

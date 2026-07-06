@@ -6,6 +6,26 @@ import { submitBtn } from '../../utils/buttonStyles'
 const DISTRICTS = ['Dakshina Kannada', 'Udupi', 'Uttara Kannada']
 const STYLES     = ['Tenkutittu', 'Badagutittu']
 const EPICS       = ['Mahabharata', 'Ramayana', 'Devi Bhagavatha', 'Skanda Purana', 'Bhagavatha', 'Other']
+const DISTRICTS_KN = [
+  'ದಕ್ಷಿಣ ಕನ್ನಡ',
+  'ಉಡುಪಿ',
+  'ಉತ್ತರ ಕನ್ನಡ'
+]
+
+const STYLES_KN = [
+  'ತೆಂಕುತಿಟ್ಟು',
+  'ಬಡಗುತಿಟ್ಟು'
+]
+
+const EPICS_KN = [
+  'ಮಹಾಭಾರತ',
+  'ರಾಮಾಯಣ',
+  'ದೇವಿ ಭಾಗವತ',
+  'ಸ್ಕಂದ ಪುರಾಣ',
+  'ಭಾಗವತ',
+  'ಇತರೆ'
+]
+
 
 function FI({ label, name, type = 'text', placeholder, value, onChange, full }) {
   const [f, setF] = React.useState(false)
@@ -99,11 +119,20 @@ export default function ShowForm({ form, onChange, onSubmit, loading, submitLabe
     selectLabel={selectLabel}
 />
 
-<FI
+{/* <FI
     label="ಶೈಲಿ (Kannada)"
     name="styleKn"
     value={form.styleKn}
     onChange={onChange}
+/> */}
+
+<SI
+    label="ಶೈಲಿ (Kannada)"
+    name="styleKn"
+    options={STYLES_KN}
+    value={form.styleKn}
+    onChange={onChange}
+    selectLabel="ಆಯ್ಕೆಮಾಡಿ..."
 />
       </Row>
       <FI
@@ -130,12 +159,21 @@ export default function ShowForm({ form, onChange, onSubmit, loading, submitLabe
     onChange={onChange}
     selectLabel={selectLabel}
 />
-
+{/* 
 <FI
     label="ಜಿಲ್ಲೆ (Kannada)"
     name="districtKn"
     value={form.districtKn}
     onChange={onChange}
+/> */}
+
+<SI
+    label="ಜಿಲ್ಲೆ (Kannada)"
+    name="districtKn"
+    options={DISTRICTS_KN}
+    value={form.districtKn}
+    onChange={onChange}
+    selectLabel="ಆಯ್ಕೆಮಾಡಿ..."
 />
 
         <SI
@@ -147,11 +185,20 @@ export default function ShowForm({ form, onChange, onSubmit, loading, submitLabe
     selectLabel={selectLabel}
 />
 
-<FI
+{/* <FI
     label="ಮಹಾಕಾವ್ಯ (Kannada)"
     name="epicKn"
     value={form.epicKn}
     onChange={onChange}
+/> */}
+
+<SI
+    label="ಮಹಾಕಾವ್ಯ (Kannada)"
+    name="epicKn"
+    options={EPICS_KN}
+    value={form.epicKn}
+    onChange={onChange}
+    selectLabel="ಆಯ್ಕೆಮಾಡಿ..."
 />
       </Row>
       <Row>

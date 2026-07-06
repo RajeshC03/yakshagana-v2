@@ -43,6 +43,21 @@ public class AuthController {
     }
     @PostMapping("/organizer/register") public ResponseEntity<?> orgReg(@RequestBody Map<String,String> b) {
         if(or.existsByEmail(b.get("email"))) return bad("Email already registered. Please login.");
+
+        // Validate all mandatory fields
+    if (
+        b.get("name") == null || b.get("name").isBlank() ||
+        b.get("nameKn") == null || b.get("nameKn").isBlank() ||
+        b.get("melaName") == null || b.get("melaName").isBlank() ||
+        b.get("melaNameKn") == null || b.get("melaNameKn").isBlank() ||
+        b.get("email") == null || b.get("email").isBlank() ||
+        b.get("phone") == null || b.get("phone").isBlank() ||
+        b.get("region") == null || b.get("region").isBlank() ||
+        b.get("regionKn") == null || b.get("regionKn").isBlank() ||
+        b.get("password") == null || b.get("password").isBlank()
+    ) {
+        return bad("All fields are mandatory.");
+    }
         Organizer o = new Organizer();
 
 o.setName(b.get("name"));
