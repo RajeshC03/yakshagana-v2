@@ -11,6 +11,8 @@ export default function useLiveUpdates() {
   const [updates, setUpdates]           = useState([])
   const tickerRef = useRef(null)
 
+  const instantUpdateRef = useRef(false)
+
   const addToHistory = (message) => {
     setUpdates(prev => [{ message, timestamp: new Date().toISOString() }, ...prev].slice(0, 10))
   }
@@ -29,7 +31,12 @@ export default function useLiveUpdates() {
   }
 
   const fetchTonightShows = async () => {
-    try {
+
+    if (instantUpdateRef.current) {
+    return;
+  }
+
+  try {
       const today = getLocalToday()
       const res   = await showsAPI.getAll()
       const shows = res.data.filter(s => extractDate(s.date) === today)
@@ -96,15 +103,36 @@ if (shows.length > 0) {
       const socket = new SockJS('/ws')
       const client = Stomp.over(socket)
       client.debug = null
+      
       client.connect({}, () => {
-        client.subscribe('/topic/shows', msg => {
-          const data = JSON.parse(msg.body)
-          if (data.message) {
-            addToHistory(data.message)
-            fetchTonightShows()
-          }
-        })
-      })
+
+    console.log("✅ WebSocket Connected");
+
+    client.subscribe('/topic/shows', msg => {
+
+        const data = JSON.parse(msg.body);
+
+        console.log("WEBSOCKET:", data);
+
+        instantUpdateRef.current = true;
+
+        setLatestUpdate(data);
+
+        addToHistory(
+            lang === "kn" && data.messageKn
+                ? data.messageKn
+                : data.message
+        );
+
+        setTimeout(() => {
+            instantUpdateRef.current = false;
+            fetchTonightShows();
+        }, 8000);
+    });
+
+}, (error) => {
+    console.error("❌ WebSocket Error:", error);
+});
     } catch { /* fallback to polling */ }
   }
 

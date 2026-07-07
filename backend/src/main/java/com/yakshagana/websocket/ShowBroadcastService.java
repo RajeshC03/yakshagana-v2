@@ -69,6 +69,11 @@ public void broadcast() {
 
     public void sendUpdate(String message, String messageKn) {
 
+    System.out.println("Broadcasting:");
+    System.out.println(message);
+    System.out.println(messageKn);
+
+
     Map<String,Object> u = new HashMap<>();
 
     u.put("type","INSTANT_UPDATE");

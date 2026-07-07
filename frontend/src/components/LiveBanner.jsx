@@ -38,6 +38,8 @@ export default function LiveBanner() {
   }
 }, [latestUpdate, lang])
 
+console.log("LiveBanner latestUpdate:", latestUpdate);
+
 
   return (
     <div style={{
